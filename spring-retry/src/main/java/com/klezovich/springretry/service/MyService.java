@@ -11,13 +11,13 @@ public class MyService {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-    private int retryCount=0;
+    private int retryCount = 0;
 
     @Retryable(value = RuntimeException.class)
     void retry(Integer number) {
         log.info("Try to execute retryService...");
 
-        if( number != 0  && retryCount < 2) {
+        if (number != 0 && retryCount < 2) {
             retryCount++;
             log.info("FAIL !");
             throw new RuntimeException();
@@ -43,6 +43,6 @@ public class MyService {
     }
 
     public void resetRetryCounter() {
-        retryCount=0;
+        retryCount = 0;
     }
 }

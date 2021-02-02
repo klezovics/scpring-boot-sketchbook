@@ -57,8 +57,8 @@ public class Bean1 {
 
     @Value("both_values")
     public void setBoth(String one, String two) {
-        fromDoubleSetter1=one;
-        fromDoubleSetter2=two;
+        fromDoubleSetter1 = one;
+        fromDoubleSetter2 = two;
     }
 
 

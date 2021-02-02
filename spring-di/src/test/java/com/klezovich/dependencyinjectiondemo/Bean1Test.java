@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest(classes = {Bean1.class,SrcBean.class})
+@SpringBootTest(classes = {Bean1.class, SrcBean.class})
 class Bean1Test {
 
     @Autowired
@@ -14,19 +14,19 @@ class Bean1Test {
 
     @Test
     void testValueAnnotation() {
-        assertEquals("Arthur Klezovich",bean.getBeanAuthor());
+        assertEquals("Arthur Klezovich", bean.getBeanAuthor());
         assertEquals("appFileValue", bean.getValueFromFile());
         assertEquals(42, bean.getAnswerToAll());
-        assertEquals(100,bean.getSum());
+        assertEquals(100, bean.getSum());
         assertEquals("appJvmValue", bean.getValueFromJvm());
         assertEquals("MY_ENV_VALUE", bean.getValueFromEnv());
         assertEquals("srcFieldValue", bean.getFromSrcBeanField());
         assertEquals("srcMethodValue", bean.getFromSrcMethodField());
         assertEquals(true, bean.isMyBoolean());
         assertTrue(bean.getDateStr().length() > 0);
-        assertEquals("forSetter",bean.getFromSetter());
+        assertEquals("forSetter", bean.getFromSetter());
         assertEquals("forConstructor", bean.getFromConstructor());
-        assertEquals("both_values",bean.getFromDoubleSetter1());
+        assertEquals("both_values", bean.getFromDoubleSetter1());
         assertEquals("both_values", bean.getFromDoubleSetter2());
     }
 
